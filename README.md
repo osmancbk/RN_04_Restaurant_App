@@ -38,7 +38,7 @@
 
 This app comprises use of Stack Navigation and RESTFUL Web APIs
 
-- Source is pulled API from 'https://opentable.herokuapp.com/api/cities'
+- Source is pulled API from 'https://opentable.herokuapp.com/'
 
 ## How To Use
 
