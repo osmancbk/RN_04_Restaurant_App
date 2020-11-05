@@ -73,5 +73,5 @@ npm install axios
 
 ## Contact
 
-- GitHub [OsmanÇıbık](https://github.com/osmancbk)
+- GitHub [osmancbk](https://github.com/osmancbk)
 -
