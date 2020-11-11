@@ -65,6 +65,64 @@ npm install @react-navigation/stack
 npm install axios
 ```
 
+
+<hr/>
+<br/>
+
+
+## Piece of Code
+```
+ {/*----ACTIVITYINDICATOR--- */}
+                {
+                    isLoading ?
+                        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                            <ActivityIndicator size="large" color="#311b92" />
+                        </View>
+                        :
+                        <FlatList
+                            keyExtractor={(_, index) => index.toString()}
+                            data={cities}
+                            renderItem={renderCityList}
+                            ItemSeparatorComponent={renderSeperator}
+                        />
+                }
+```
+
+```
+
+    const getApi = () => {
+        axios.get('http://opentable.herokuapp.com/api/restaurants', { params: { city: selectedCity } })
+            .then((response) => {
+                setRestaurants(response.data.restaurants)
+                originalList = [...response.data.restaurants]
+                setLoading(false);
+            }) //clg(response)
+    }
+
+    useEffect(() => {
+        getApi()
+    }, [])
+```
+
+```
+
+    function searchRestaurant(search) {
+        const filteredRestaurant = originalList.filter(rest => {
+            const text = search.toUpperCase();
+            const restName = rest.name.toUpperCase();
+
+            return restName.indexOf(text) > -1;
+        })
+        setRestaurants(filteredRestaurant);
+    }
+```
+
+```
+                <Text style={styles.price}>
+                    {'🤑'.repeat(props.restaurant.price)}
+                </Text>
+```
+
 ## Acknowledgements
 
 <!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For exmpale -->
