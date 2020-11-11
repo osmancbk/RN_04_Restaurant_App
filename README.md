@@ -89,7 +89,19 @@ npm install axios
 ```
 
 ```
+    const getApi = async () => {
+        const response = await axios.get('http://opentable.herokuapp.com/api/cities');
+        setCities(response.data.cities)
+        originalList = [...response.data.cities]
+        setLoading(false);
+    }
 
+    useEffect(() => {
+        getApi();
+    }, [])
+```
+
+```
     const getApi = () => {
         axios.get('http://opentable.herokuapp.com/api/restaurants', { params: { city: selectedCity } })
             .then((response) => {
@@ -105,7 +117,6 @@ npm install axios
 ```
 
 ```
-
     function searchRestaurant(search) {
         const filteredRestaurant = originalList.filter(rest => {
             const text = search.toUpperCase();
@@ -115,6 +126,16 @@ npm install axios
         })
         setRestaurants(filteredRestaurant);
     }
+```
+
+```
+    <TouchableOpacity
+        style={styles.button}
+        onPress={() =>
+            Linking.openURL(selectedRestauranmobile_reserve_url)
+        }>
+        <Text style={styles.reservText}>Go foreservation</Text>
+    </TouchableOpacity>
 ```
 
 ```
@@ -132,4 +153,4 @@ npm install axios
 ## Contact
 
 - GitHub [osmancbk](https://github.com/osmancbk)
--
+- Linkedin 
