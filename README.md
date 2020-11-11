@@ -96,7 +96,7 @@ npm install axios
                 setRestaurants(response.data.restaurants)
                 originalList = [...response.data.restaurants]
                 setLoading(false);
-            }) //clg(response)
+            })
     }
 
     useEffect(() => {
