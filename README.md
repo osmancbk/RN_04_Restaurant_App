@@ -18,6 +18,7 @@
 - [Built With](#built-with)
 - [Features](#features)
 - [How to use](#how-to-use)
+- [Piece of Code](#piece-of-code)
 - [Acknowledgements](#acknowledgements)
 - [Contact](#contact)
 
