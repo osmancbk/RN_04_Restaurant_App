@@ -72,20 +72,20 @@ npm install axios
 
 ## Piece of Code
 ```
- {/*----ACTIVITYINDICATOR--- */}
-                {
-                    isLoading ?
-                        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                            <ActivityIndicator size="large" color="#311b92" />
-                        </View>
-                        :
-                        <FlatList
-                            keyExtractor={(_, index) => index.toString()}
-                            data={cities}
-                            renderItem={renderCityList}
-                            ItemSeparatorComponent={renderSeperator}
-                        />
-                }
+{/*----ACTIVITYINDICATOR--- */}
+{
+    isLoading ?
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <ActivityIndicator size="large" color="#311b92" />
+        </View>
+        :
+        <FlatList
+            keyExtractor={(_, index) => index.toString()}
+            data={cities}
+            renderItem={renderCityList}
+            ItemSeparatorComponent={renderSeperator}
+        />
+ }
 ```
 
 ```
@@ -118,9 +118,9 @@ npm install axios
 ```
 
 ```
-                <Text style={styles.price}>
-                    {'🤑'.repeat(props.restaurant.price)}
-                </Text>
+    <Text style={styles.price}>
+        {'🤑'.repeat(props.restaurant.price)}
+    </Text>
 ```
 
 ## Acknowledgements
